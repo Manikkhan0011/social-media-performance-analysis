@@ -191,6 +191,7 @@ plt.xlabel("Predicted Label")
 plt.ylabel("True Label")
 
 plt.tight_layout()
+plt.savefig("churn_prediction_metrics.png", dpi=300, bbox_inches="tight")
 plt.show()
 
 # ------------------------------------------------------------------------------
