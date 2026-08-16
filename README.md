@@ -1,25 +1,20 @@
-# 📊 Social Media Performance Analysis & Dataset Generation
+# 📊 LMS User Churn Prediction Model
 
-## 📌 Project Overview
-This data science project focuses on generating a synthetic, realistic social media performance dataset and performing Exploratory Data Analysis (EDA) to uncover engagement trends across different platforms and content types.
+A Machine Learning project to predict user churn on Learning Management Systems (LMS) using engagement logs and automated retention strategies.
 
-The primary goal is to derive actionable insights into user engagement, reach trends, and content effectiveness across **Instagram**, **LinkedIn**, and **Facebook**.
+## 🏗️ Project Architecture
 
----
+```mermaid
+graph TD
+    A[LMS Engagement Logs] --> B[Data Preprocessing & Feature Engineering]
+    B --> C[Engagement Score & Scaling]
+    C --> D[Model Training: Random Forest & Gradient Boosting]
+    D --> E[Model Evaluation: ROC-AUC & Confusion Matrix]
+    E --> F[High-Risk Churn Prediction]
+    F --> G[Personalized Retention Support Strategies]
+```
 
-## 🛠️ Tech Stack & Tools Used
-* **Language:** Python 3.13
-* **Libraries:** `Pandas`, `NumPy`, `Matplotlib`, `Seaborn`
-* **Environment:** VS Code / Git
-
----
-
-## 📁 Repository Structure
-```text
-├── generate_social_media_dataset.py  # Script to synthesize social media data
-├── analyze_social_media.py           # Script for EDA and data visualization
-├── social_media_data.csv             # Generated CSV dataset (600 records)
-├── platform_engagement_rate.png      # Chart: Platform Engagement Rate Comparison
-├── post_type_performance.png         # Chart: Engagement breakdown by Content Type
-├── monthly_performance_trend.png     # Chart: Time-series Reach & Engagement Trend
-└── README.md                         # Project documentation
+## 🚀 How to Run
+```bash
+python churn_prediction_model.py
+```
