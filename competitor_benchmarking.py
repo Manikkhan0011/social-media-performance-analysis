@@ -75,6 +75,8 @@ sns.barplot(
     data=df_comp,
     x="Competitor",
     y="Monthly_Subscription_USD",
+    hue="Competitor",
+    legend=False,
     ax=axes[0, 0],
     palette=colors,
 )
@@ -118,6 +120,8 @@ sns.barplot(
     data=df_comp.sort_values(by="Value_Score", ascending=False),
     x="Value_Score",
     y="Competitor",
+    hue="Competitor",
+    legend=False,
     ax=axes[1, 0],
     palette="Blues_r",
 )
