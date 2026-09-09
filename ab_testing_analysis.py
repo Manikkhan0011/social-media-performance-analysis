@@ -128,7 +128,7 @@ def perform_hypothesis_tests(df):
 
 
 # ------------------------------------------------------------------------------
-# STEP 3: Automated Visualization & Dashboard Export
+# STEP 3: Automated Visualization & Dashboard Export (Fixed Rendering)
 # ------------------------------------------------------------------------------
 def generate_and_save_visuals(df, metrics):
     sns.set_theme(style="whitegrid")
@@ -184,14 +184,8 @@ def generate_and_save_visuals(df, metrics):
 
     plt.tight_layout()
 
-    # High-Res Export
+    # Save PNG clean image before clearing memory
     output_png = "ab_test_results_dashboard.png"
-    plt.savefig(output_png, dpi=300, bbox_inches="tight")
-    print(f"\nDashboard exported as '{output_png}' successfully.")
-    plt.show()
-
-
-if __name__ == "__main__":
-    df = generate_ab_test_data()
-    metrics = perform_hypothesis_tests(df)
-    generate_and_save_visuals(df, metrics)
+    plt.savefig(output_png, dpi=300, bbox_inches="tight", format="png")
+    plt.close(fig)
+    print(f"\nDashboard exported cleanly as '{output_png}'.")
