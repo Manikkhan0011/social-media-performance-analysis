@@ -82,7 +82,8 @@ with c2:
         title="Bounce Rate Comparison (%) - Lower is Better",
         text_auto=".2f",
     )
-    # Unique key added to prevent duplicate ID error
-    st.plotly_chart(
-        fig_bounce, use_container_width=True, key="plotly_bounce_chart"
-    )
+    # New unique filename to bypass cache
+    output_png = "ab_test_dashboard_v2.png"
+    plt.savefig(output_png, dpi=300, bbox_inches="tight", format="png")
+    plt.close(fig)
+    print(f"\nDashboard exported cleanly as '{output_png}'.")
